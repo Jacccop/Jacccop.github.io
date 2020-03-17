@@ -1,0 +1,169 @@
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url(images/pozadie.png);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+h2,h1 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+div {
+    background-color: white;
+    border-radius: 15px;  
+}
+
+.wrapper {
+    text-align: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 200px);
+    grid-template-rows: repeat(7, 200px);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+}
+
+.nazov-block h1 {
+    font-weight: 700;
+}
+
+    
+.logo-block { 
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    animation:spin 50s linear infinite;
+}
+
+.logoName {
+    position: absolute;
+    width: 200px;
+}
+
+.nazov-block { 
+    grid-area: 1 / 2 / 2 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.nav { 
+    grid-area: 1 / 5 / 2 / 8;  
+}
+
+.text1-block { 
+    grid-area: 2 / 1 / 4 / 4;
+    padding: 0 10px;
+    background-color: #d82e2e;
+    color: white;
+ }
+.text2-block { 
+    grid-area: 2 / 5 / 4 / 8;
+    padding: 0 10px;
+    background-color: #d82e2e;
+    color: white;
+ }
+
+.text3-block {
+    background-color: #d82e2e;
+    grid-area: 4 / 3 / 7 / 6;
+    padding: 0 10px;
+    text-align: left;
+    color: white;  
+}
+
+.text4-block {
+    padding: 0 10px;
+    grid-area: 4 / 1 / 6 / 3;
+    background-color: #f5f9fc;
+ }
+
+.text5-block { 
+    grid-area: 5 / 6 / 8 / 8;
+    padding: 0 10px;
+    background-color: #f5f9fc;
+ }
+.chart { grid-area: 6 / 1 / 8 / 3; }
+.infolinka { grid-area: 7 / 3 / 8 / 4; }
+.email { grid-area: 7 / 4 / 8 / 5; }
+.nariadenia { grid-area: 7 / 5 / 8 / 6; }
+.corona-block { grid-area: 2 / 4 / 3 / 5; }
+.health-block { grid-area: 3 / 4 / 4 / 5; }
+.video1 { grid-area: 4 / 6 / 5 / 7; }
+.video2 { grid-area: 4 / 7 / 5 / 8; }
+
+.age-statistic {
+    width: 400px;
+    border-radius: 15px;
+}
+
+.aWhite {
+   color: rgb(255, 255, 255); 
+}
+
+.aBlack {
+    color: rgb(0, 0, 0); 
+ }
+
+ .corona-img {
+     width: 200px;
+ }
+
+ .health-img {
+     width: 170px;
+ }
+
+ .navBtn{
+     display: block;
+     padding: 5px;
+     background-color: #d82e2e;
+     margin: 5px;
+     color: white;
+     border-radius: 15px;
+     text-decoration: none;
+     clear: both;
+ }
+
+ .navBtn:hover .navBiohazard {
+     color: white;
+ }
+
+ .navBtn:hover {
+   background-color: #ac2727;
+}
+
+ .navBiohazard {
+     color: #d82e2e;
+ }
+ 
+ .prvy {
+     margin-top: 25px;
+ }
+
+
