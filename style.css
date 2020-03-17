@@ -60,6 +60,7 @@ div {
 
 .logo {
     animation:spin 50s linear infinite;
+    width: 200px;
 }
 
 .logoName {
