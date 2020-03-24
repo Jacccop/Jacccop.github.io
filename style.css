@@ -111,10 +111,10 @@ a {
 .navBtn {
     display: inline-block;
     vertical-align: middle;
-    margin: 0 15px 0 15px;
+    margin: 0px 15px 0px 15px;
     font-family: "MinecraftP", sans-serif;
     letter-spacing: 3px;
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 .navBtn:hover {
@@ -131,6 +131,14 @@ a {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+.vipBtn {
+    background-color: rgb(21, 73, 71);
+}
+
+.vipBtn:hover {
+    background-color: rgb(34, 107, 105);
 }
 
 /**************FOOTER**************/
