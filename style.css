@@ -100,7 +100,7 @@ a {
 /**************NAV**************/
 
 .navbar {
-    background-color: rgb(30, 30, 30);
+    background-image: url(images/Background.png);
     width: 100%;
     height: auto;
     position: sticky;
@@ -115,10 +115,11 @@ a {
     font-family: "MinecraftP", sans-serif;
     letter-spacing: 3px;
     padding: 10px 15px;
+    text-shadow: 1px 1px #000;
 }
 
 .navBtn:hover {
-    background-color: rgb(20, 20, 20);
+    background-color: rgba(20, 20, 20,0.7);   
 }
 
 .navNadpis {
@@ -134,11 +135,11 @@ a {
 }
 
 .vipBtn {
-    background-color: rgb(21, 73, 71);
+    background-color: rgba(21, 73, 71,0.6);
 }
 
 .vipBtn:hover {
-    background-color: rgb(34, 107, 105);
+    background-color: rgba(34, 107, 105,0.6);
 }
 
 /**************FOOTER**************/
