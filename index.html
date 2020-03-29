@@ -1,38 +1,81 @@
 <!DOCTYPE html>
 <html lang="sk">
     <head>
-        <title>Minecraft Web</title>
+        <title>Alpha Shard</title>
         <meta charset="UTF-8">
         <meta content="width=device-width,initial-scale=1" name="viewport">
+        <meta content="CZ/SK Minecraft server" name="description">
+        <meta content="minecraft cz/sk server, minecraft server, minecraft cz/sk vanilla" name="keywords">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/6036ca76a3.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script src="js/parallax.min.js"></script>
     </head>
 
     <body>
-
-        <nav class="navbar">
-            <h1 class="navNadpis">Minecraft server</h1>
-            <a class="navBtn"><img class="navImg" src="images/grass.png" alt="dia">MAPA</a>
-            <a class="navBtn"><img class="navImg" src="images/potion.png" alt="dia">DACO</a>
-            <a class="navBtn"><img class="navImg" src="images/pickaxe.png" alt="dia">DACO</a>
-            <a class="navBtn vipBtn"><img class="navImg" src="images/diamond.png" alt="dia">VIP</a>
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="navNadpis">alpha shard</a>
+            <a class="navBtn"><img class="navImg" src="images/pickaxe.png" alt="">NOVINKY</a>
+            <a class="navBtn"><img class="navImg" src="images/potion.png" alt="">ZMENY</a>
+            <a class="navBtn"><img class="navImg" src="images/head.png" alt="">REBRICEK</a>
+            <a class="navBtn"><img class="navImg" src="images/grass.png" alt="">MAPA</a>
+            <a class="navBtn"><img class="navImg" src="images/apple.png" alt="">ALPHA TEAM</a>
+            <a href="vip.html" class="navBtn vipBtn"><img class="navImg" src="images/diamond.png" alt="dia">VIP</a>
+            <a onclick="myFunction()" class="menuBtn"><img class="navImg" src="images/menu.png" alt=""></a>
         </nav>
-
         <div class="headerImg">
             <div class="headerImgContent">
-                <h1>Minecraft server</h1>
-                <h2 class="Ip">IP : mc.mineheroes.org</h2>
-                <p class="headerImgContentText">Najviac popiči Minecraft server aký nájdeš prisahám.</p>
-                <a class="mainBtn">Daco</a>
-                <a class="mainBtn">Daco</a>
+                <h1>alpha shard</h1>
+                <span class="headerImgContentText">Survival s vlastnými pluginmi</span>
+                <h2 class="Ip">IP : mc.alphashard.eu</h2>
+                <a class="mainBtn">HLASUJ ZA SERVER</a>
+                <a class="mainBtn">O NÁS</a>
             </div>
         </div>
-
         <div class="mainContent">
+            <h1>Novinka</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <footer>Nejaký footer</footer>
+        <footer>
+            <div class="footerBlock">
+                <h2>Užitočné odkazy</h2>
+                <ul>
+                    <li>Niečo</li>
+                    <li>Niečo</li>
+                    <li>Niečo</li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <h2>Podpora</h2>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Podmienky služieb</li>
+                    <li>Ban appeal</li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <h2>Nájdeš nás</h2>
+                <ul>
+                    <li>Discord</li>
+                    <li>Niečo</li>
+                </ul>
+            </div> 
+            <p class="cpNotice">Copyright &copy; 2020, Alpha Shard, Všetky práva vyhradené.</p>
+        </footer>
+
+        <script>
+        function myFunction() {
+            var x = document.getElementById("navbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } 
+            else {
+                x.className = "navbar";
+            }
+        } 
+        </script>
     </body>
 </html>

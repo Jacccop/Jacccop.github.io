@@ -1,3 +1,15 @@
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 @font-face {
     font-family: MinecraftH;
     src: url(fonts/Minecrafter.ttf);
@@ -37,6 +49,8 @@ h1,h2 {
 }
 
 a {
+    color: white;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -46,7 +60,7 @@ a {
 .headerImg {
     position: relative;
     width: 100%;
-    height: 33vw;
+    height: 35vw;
     background-image: url(images/headerImgFade.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,8 +68,12 @@ a {
 }
 
 .mainContent {
-    height: 600px;
-    margin: 80px 50px 10px 50px;
+    padding: 30px;
+    background-color: rgb(41, 41, 41);
+    height: 150px;
+    width: 50%;
+    margin: 30px auto;
+    overflow: hidden;
 }
 
 .headerImgContent {
@@ -72,29 +90,44 @@ a {
 }
 
 .headerImgContentText {
-    font-size: 1.25vw;
+    letter-spacing: 1px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.85vw;
     text-shadow: 1px 1px #000;
 }
 
 .Ip {
+    font-family: 'Roboto Condensed', sans-serif;
     color: rgb(252, 255, 50);
     letter-spacing: 1px;
-    font-size: 2vw;
+    font-size: 1.5vw;
+    margin: 10px auto 20px auto;
 }
 
 .mainBtn {
+    font-family: 'Roboto Condensed', sans-serif;
     display: inline-block;
     margin: 0 1vw;
     padding: 0.5vw 1vw;
-    border: 2px solid rgb(252, 255, 50);
-    border-radius: 5px;
     font-size: 1.25vw;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px #000A;
+	box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+    background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
+    border: 2px solid #000;
 }
 
 .mainBtn:hover {
-    background-color: rgb(210, 212, 47);
-    color: black;
-    border-color: rgb(210, 212, 47);
+    background: linear-gradient(0deg, rgba(100, 100, 255, 0.45), rgba(100, 100, 255, 0.45)), url('https://i.ibb.co/rb2TWXL/bgbtn.png') repeat;
+	text-shadow: 2px 2px #202013CC;
+	color: #FFFFA0;
+}
+
+.mainContent h1 {
+    font-family: "Ubuntu", sans-serif;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
 }
 
 /**************NAV**************/
@@ -111,7 +144,7 @@ a {
 .navBtn {
     display: inline-block;
     vertical-align: middle;
-    margin: 0px 15px 0px 15px;
+    margin: 0px 8px 0px 8px;
     font-family: "MinecraftP", sans-serif;
     letter-spacing: 3px;
     padding: 10px 15px;
@@ -123,6 +156,10 @@ a {
 }
 
 .navNadpis {
+    font-family: "MinecraftH", sans-serif;
+    margin: 0px;
+    font-size: 30px;
+    letter-spacing: 2px;
     display: inline-block;
     vertical-align: middle;
     margin: 0 20px 0 5px;
@@ -142,10 +179,238 @@ a {
     background-color: rgba(34, 107, 105,0.6);
 }
 
+.menuBtn {
+    display: none;
+}
+
+ @media screen and (max-width: 1279px) {
+    .navbar a:not(:first-child) {display: none;}
+    .navbar .menuBtn {
+      float: right;
+      display: block !important;
+    }
+  }
+  
+  @media screen and (max-width: 1279px) {
+    .navbar.responsive {position: relative;}
+    .navbar.responsive .menuBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .navbar.responsive .navBtn {
+      float: none;
+      display: block;
+      text-align: left;
+      margin: unset;
+    }
+  } 
+
 /**************FOOTER**************/
 
 footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    height: 130px;
+    height: auto;
     background-color: rgb(20, 20, 20);
+    margin-top: 100px;
+}
+
+.footerBlock {
+    margin: 20px;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+}
+
+.footerBlock h2 {
+    padding: 5px 0 5px 0;
+    border-bottom: 2px solid white;
+    color: rgb(210, 212, 47);
+}
+
+.footerBlock ul {
+    padding-left: 0px;
+    list-style-type: none;
+    margin-top: 5px;
+}
+
+.footerBlock ul li {
+    margin-bottom: 2px;
+}
+
+.footerBlock h2 {
+    font-weight: unset;
+}
+
+.cpNotice {
+    margin-top: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+/**************VIP**************/
+.vip {
+    background-image: url(images/vipBackground2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.vipFlexWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.vipBlock {
+    border-radius: 20px;
+    position: relative;
+    width: 290px;
+    height: 400px;
+    margin: 40px 30px 30px 30px;
+    box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.3)
+}
+
+.vipBlock .cost {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 1px 1px #000;
+}
+
+.vipCart {
+    margin-top: 110px;
+}
+
+.vipName {
+    font-size: 35px;
+    text-align: center;
+    display: block;
+    text-shadow: 1px 1px #000;
+}
+
+.benefits {
+    margin-top: 5px;
+    margin-bottom: 5px;   
+    width: 205px;
+}
+
+.vipBtnDiaBuy { 
+    margin: 9px auto 10px auto;
+    background-color:  rgb(7, 43, 61);
+}
+
+.vipBtnDiaBuy:hover {
+    background-color:  rgb(5, 29, 41);
+}
+
+.vipBtnGoldBuy:hover {
+    background-color:  rgb(39, 39, 1);
+}
+
+.vipBtnIronBuy:hover {
+    background-color:  rgb(36, 36, 36);
+}
+
+.vipBtnGoldBuy {
+    margin: 9px auto 10px auto;
+    background-color:  rgb(47, 48, 1);  
+}
+
+.vipBtnIronBuy { 
+    margin: 9px auto 10px auto;
+    background-color:  rgb(41, 41, 41);  
+}
+
+.vipBtnBuy {
+    border-radius: 0 0 18px 18px;
+    padding: 10px;
+    text-align: center;
+    box-sizing:border-box;
+    display: block;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px #000;
+    font-weight: bold;
+}
+
+.vip1 {
+    background-color: rgb(114, 114, 114);
+    background: linear-gradient(0deg, rgb(59, 59, 59) 7%, rgba(114,114,114,1) 49%, rgba(176,176,176,1) 100%);
+   
+}
+
+.vip2 {
+    background-color: #a58a1d;
+    background: linear-gradient(0deg, rgb(64, 66, 3) 7%, rgba(165,138,29,1) 49%, rgb(180, 151, 32) 100%);
+
+}
+
+.vip3 {
+    background-color: #2b9fa1;
+    background: linear-gradient(0deg, rgb(8, 56, 80) 7%, rgba(43,159,161,1) 49%, rgb(32, 184, 187) 100%);
+   
+}
+
+.swordImg1 {
+    position: absolute;
+    left: -20px;
+    top: -30px; 
+    filter: drop-shadow(8px 13px 5px rgba(34,34,34,0.8));
+}
+
+.axeImg2 {
+    position: absolute; 
+    left: 190px;
+    top: -30px;
+    filter: drop-shadow(8px 13px 5px rgba(34,34,34,0.8));
+}
+
+.vipDia {
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    position: absolute;
+    top: 25px;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(8px 13px 5px rgba(34,34,34,0.8));
+    box-sizing: border-box;
+    border-radius: 35%;
+}
+
+
+.vipGold {
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 72px;
+    position: absolute;
+    top: 45px;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(5px 10px 5px rgba(34,34,34,0.8));
+    box-sizing: border-box;
+    border-radius: 35%;
+}
+
+.swordImg2 {
+    position: absolute; 
+    left: 170px;
+    top: -30px;
+    filter: drop-shadow(8px 13px 5px rgba(34,34,34,0.8));
+}
+
+.vip1Top {
+   
+}
+
+.vip2Top {
+    
+}
+
+.vip3Top {
+    
 }
