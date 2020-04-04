@@ -1,28 +1,9 @@
 <!DOCTYPE html>
 <html class="vip" lang="sk">
-    <head>
-        <title>Alpha Shard</title>
-        <meta charset="UTF-8">
-        <meta content="width=device-width,initial-scale=1" name="viewport">
-        <meta content="CZ/SK Minecraft server" name="description">
-        <meta content="minecraft cz/sk server, minecraft server, minecraft cz/sk vanilla" name="keywords">
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap" rel="stylesheet"> 
-        <script src="https://kit.fontawesome.com/6036ca76a3.js" crossorigin="anonymous"></script>
-    </head>
+    <?php include('includes/head.php'); ?>  
 
     <body>
-        <nav class="navbar" id="navbar">
-            <a href="index.html" class="navNadpis">alpha shard</a>
-            <a class="navBtn"><img class="navImg" src="images/pickaxe.png" alt="">NOVINKY</a>
-            <a class="navBtn"><img class="navImg" src="images/potion.png" alt="">ZMENY</a>
-            <a class="navBtn"><img class="navImg" src="images/head.png" alt="">REBRICEK</a>
-            <a class="navBtn"><img class="navImg" src="images/grass.png" alt="">MAPA</a>
-            <a class="navBtn"><img class="navImg" src="images/apple.png" alt="">ALPHA TEAM</a>
-            <a href="vip.html" class="navBtn vipBtn"><img class="navImg" src="images/diamond.png" alt="dia">VIP</a>
-            <a onclick="myFunction()" class="menuBtn"><img class="navImg" src="images/menu.png" alt=""></a>
-        </nav>
+        <?php include('includes/nav.php'); ?> 
         <div class="vipFlexWrapper">
             <div class="vipBlock vip1">
                 <div class="vip1Top">
@@ -40,8 +21,20 @@
                             <li>Nejaká zaujímavá výhoda</li>
                             <li>Nejaká zaujímavá výhoda</li>
                         </ul>
-                        <b class="cost">4&euro;</b>
-                        <a class="vipBtnIronBuy vipBtnBuy">KÚPIŤ</a>
+                        <form>
+                            <ul class="iron radios">
+                                <li>
+                                    <input type="radio" class="ironRadio timeRadio" id="ironMesiac" name="iron" value="male" checked = "checked">
+                                    <label onclick="changePrice(this.id)" id="iron30" class="ironRadio" for="ironMesiac">30 dní</label><br>
+                                </li>
+                                <li>
+                                    <input type="radio" class="ironRadio timeRadio" id="ironRok" name="iron" value="female">
+                                    <label onclick="changePrice(this.id)" id="iron1" class="ironRadio" for="ironRok">1 rok</label><br>
+                                </li>
+                            </ul>
+                            <b id="ironCena" class="cost">2&euro;</b>
+                            <input type="submit" class="vipBtnIronBuy vipBtnBuy" value="KÚPIŤ">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -63,8 +56,20 @@
                             <li>Nejaká zaujímavá výhoda</li>
                             <li>Nejaká zaujímavá výhoda</li>
                         </ul>
-                        <b class="cost">8&euro;</b>
-                        <a class="vipBtnGoldBuy vipBtnBuy">KÚPIŤ</a>
+                        <form>
+                            <ul class="gold radios">
+                                <li>
+                                    <input type="radio" class="goldRadio timeRadio" id="goldMesiac" name="gold" value="male" checked = "checked">
+                                    <label onclick="changePrice(this.id)" id="gold30" class="goldRadio" for="goldMesiac">30 dní</label><br>
+                                </li>
+                                <li>
+                                    <input type="radio" class="goldRadio timeRadio" id="goldRok" name="gold" value="female">
+                                    <label onclick="changePrice(this.id)" id="gold1" class="goldRadio" for="goldRok">1 rok</label><br>
+                                </li>
+                            </ul>
+                            <b id="goldCena" class="cost">3&euro;</b>
+                            <input type="submit" class="vipBtnGoldBuy vipBtnBuy" value="KÚPIŤ">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -85,39 +90,24 @@
                             <li>Nejaká zaujímavá výhoda</li>
                             <li>Nejaká zaujímavá výhoda</li>
                         </ul>
-                        <b class="cost">16&euro;</b>
-                        <a class="vipBtnDiaBuy vipBtnBuy">KÚPIŤ</a>
+                        <form>
+                            <ul class="dia radios">
+                                <li>
+                                    <input type="radio" class="diaRadio timeRadio" id="diaMesiac" name="dia" value="male" checked = "checked">
+                                    <label onclick="changePrice(this.id)" id="dia30" class="diaRadio" for="diaMesiac">30 dní</label><br>
+                                </li>
+                                <li>
+                                    <input type="radio" class="diaRadio timeRadio" id="diaRok" name="dia" value="female">
+                                    <label onclick="changePrice(this.id)" id="dia1" class="diaRadio" for="diaRok">1 rok</label><br>
+                                </li>
+                            </ul>
+                            <b id="diaCena" class="cost">5&euro;</b>
+                            <input type="submit" class="vipBtnDiaBuy vipBtnBuy" value="KÚPIŤ">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-     
-        <footer>
-            <div class="footerBlock">
-                <h2>Užitočné odkazy</h2>
-                <ul>
-                    <li>Niečo</li>
-                    <li>Niečo</li>
-                    <li>Niečo</li>
-                </ul>
-            </div>
-            <div class="footerBlock">
-                <h2>Podpora</h2>
-                <ul>
-                    <li>FAQ</li>
-                    <li>Podmienky služieb</li>
-                    <li>Niečo</li>
-                </ul>
-            </div>
-            <div class="footerBlock">
-                <h2>Nájdeš nás</h2>
-                <ul>
-                    <li>Discord</li>
-                    <li>Niečo</li>
-                </ul>
-            </div> 
-            <p class="cpNotice">Copyright &copy; 2020, Alpha Shard, Všetky práva vyhradené.</p>
-        </footer>
         <script>
             function myFunction() {
                 var x = document.getElementById("navbar");
@@ -129,5 +119,6 @@
                 }
             } 
             </script>
+              <?php include('includes/footer.php'); ?>  
     </body>
 </html>

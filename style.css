@@ -1,13 +1,39 @@
 @keyframes float {
+	0% {transform: translatey(0px);}
+	50% {transform: translatey(-20px);}
+	100% {transform: translatey(0px);}
+}
+
+@keyframes headerShow {
 	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-20px);
+        transform: translateY(25%);
+		opacity: 0;
 	}
 	100% {
-		transform: translatey(0px);
+        transform: translateY(0);
+		opacity: 1;
 	}
+}
+
+@keyframes builderShow {
+	0% {
+        transform: translateY(200%);
+    }
+    100% {
+        transform: translateY(0);
+	}
+}
+
+@keyframes  vipSwish{
+    25% {transform: translateX(-50px) translateY(-30px)   rotate(-60deg);}
+	35% {transform: translateX(60px)  rotate(20deg) translateY(10px);}
+    80% {transform: translateX(0);}
+}
+
+@keyframes  vipSwish2{
+    25% {transform: translateX(50px) translateY(-30px)   rotate(60deg);}
+	35% {transform: translateX(-60px)  rotate(-20deg) translateY(10px);}
+    80% {transform: translateX(0);}
 }
 
 @font-face {
@@ -20,14 +46,19 @@
     src: url(fonts/Minecraft.ttf);
 }
 
+.overlay {
+    opacity: 0.5;
+}
+
 
 html {
-    background-color: rgb(30, 30, 30);
+    background-image: url(images/backg2.png);
     color: white;
     font-family: "Ubuntu", sans-serif;
     padding: 0px;
     scrollbar-color: rgb(30,30,30) black;
-    user-select: none; 
+    user-select: none;
+    height: 100%; 
 }
 
 body {
@@ -35,6 +66,7 @@ body {
     padding: 0px;
     height: 100%;
     width: 100%;
+    display: table;
 }
 
 h1 {
@@ -54,34 +86,270 @@ a {
     cursor: pointer;
 }
 
+.btn {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    margin: 2px 0px;
+    padding: 6px 25px;
+    font-size: calc(20px + (0) * ((100vw - 360px) / 1560));
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+    background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
+    border: 2px solid #000;
+}
+
+.Btn:hover {
+    background: linear-gradient(0deg, rgba(100, 100, 255, 0.45), rgba(100, 100, 255, 0.45)), url('https://i.ibb.co/rb2TWXL/bgbtn.png') repeat;
+    text-shadow: 2px 2px #202013CC;
+    color: #FFFFA0;
+}
+
+.news {
+    display: flex;
+    background-color: rgb(20, 20, 20);
+    height: 225px;
+    width: 70%;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.newsFeed {
+    width: inherit;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    display: flex;
+}
+
+.newsHeader {
+    display: table;
+    letter-spacing: 1px;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 10px;
+    text-align: left;
+    font-size: calc(20px + (10) * ((100vw - 360px) / 1560));
+    text-shadow: 1px 1px #000;
+    margin-left: 15px;
+    text-transform: uppercase;
+}
+
+.newsHeader:hover {
+   text-decoration: underline;
+}
+
+.date {
+    margin: 0px 0px 15px 15px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.articleImg {
+    display: block;
+    width: 400px;
+    height: 225px;
+    min-height: 225px;
+    min-width: 400px;
+}
+
+.articleImg:hover {
+    opacity: 0.7;
+}
+
+.textContent {
+    height: 225px;
+    flex-grow: 1;
+    overflow: auto;
+    margin-right: 5px;
+}
+
+.newsText {
+    margin-left: 15px;
+    word-wrap: break-word; 
+    white-space:normal;
+    word-wrap: break-word;
+}
+
+.readMore {
+    margin: 3px 0px 0px 0px;
+    padding: 3px 10px;
+    display: table;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid white; 
+    border-radius: 10px;
+}
+
+.readMore:hover {
+    background-color: rgb(29, 29, 29); 
+}
+
+@media screen and (max-width: 1279px) {
+    .news {
+        flex-direction: column;
+        width: 320px;
+        height: auto;
+    }
+
+    .newsHeader {
+        font-size: 25px;
+    }
+
+    .textContent {
+        margin: 0 auto;
+        width: 288px;
+        min-height: 300px;
+        flex-grow: 1;
+    }
+
+    .articleImg {
+        margin: 0 auto;
+        width: 320px;
+        height: 180px;
+        min-height: 180px;
+        min-width: 320px;
+    }
+
+    #social-sites {
+        display: none;
+    }
+    .lfBuilders {
+        display: none;
+    }
+} 
+
+/*************************NOVINKA NA CELEJ STRANE*****************************/
+.singlePage {
+    margin: 20px auto;
+    background-color: rgb(20, 20, 20);
+    width: max-content;
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.3)
+}
+
+.singleImg {
+    display: block;
+    min-width: 960px;
+    max-width: 960px;
+    min-height: 540px;
+    max-height: 540px;
+    margin: 0 auto;
+}
+
+.singleHeader {
+    margin-top: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 1px 1px #000;
+    text-transform: uppercase;
+}
+
+.singleDate {
+    margin: 0px 0px 15px 0px;
+    text-align: center;
+}
+
+.singleText {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 1279px) {
+    .singlePage {
+        margin: 20px auto;
+        width: max-content;
+    }
+    
+    .singleImg {
+        min-width: unset;
+        min-height: unset;
+        max-width: calc(320px + 260 * ((100vw - 360px) / 919));
+    }
+    
+    .singleHeader {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 20px;
+    }
+    
+    .singleText {
+        max-width: calc(280px + 260 * ((100vw - 360px) / 919));
+        padding: 20px;
+    }
+
+    .singleText {
+        font-size: 15px;
+    }
+} 
+
+
+
 
 /**************MAIN PAGE**************/
+
+.headerImg .slide.show {
+    opacity: 1;
+}
+
+.headerImg .slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 1.5s ease-in-out;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 10px 10px 10px 3px rgba(0,0,0,0.3);
+    background-attachment: fixed;
+  }
 
 .headerImg {
     position: relative;
     width: 100%;
-    height: calc(300px + 260 * ((100vw - 360px) / 1560));
+    height: calc(475px + 285 * ((100vw - 360px) / 1560));
     background-image: url(images/headerImgFade.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
-.mainContent {
-    padding: 30px;
-    background-color: rgb(41, 41, 41);
-    height: 150px;
-    width: 50%;
-    margin: 30px auto;
-    overflow: hidden;
+    box-shadow: 10px 10px 10px 3px rgba(0,0,0,0.3);  
 }
 
 .headerImgContent {
+    z-index: 100;
+    opacity: 0;
     position: absolute;
-    top: 20%;
+    top: 5%;
     left: 0;
     text-align: center;
     width: 100%;
+}
+
+.logo {
+    width: calc(340px + 200 * ((100vw - 360px) / 1560));
+    filter: drop-shadow(8px 13px 5px rgba(0,0,0,0.8));
+    margin-bottom: 20px;
+}
+
+.playerCount {
+    letter-spacing: 1px;
+    text-shadow: 1px 1px #000;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-weight: unset;
+    font-size: calc(20px + 5 * ((100vw - 360px) / 1560));
+}
+
+.headerTransition {
+    animation: headerShow 3s forwards;
+    animation-delay: 0.3s;
 }
 
 .headerImgContent h1 {
@@ -90,24 +358,30 @@ a {
 }
 
 .headerImgContentText {
+    margin: 0px;
     letter-spacing: 1px;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: calc(20px + 15 * ((100vw - 360px) / 1560));
+    font-size: calc(25px + 10 * ((100vw - 360px) / 1560));
     text-shadow: 1px 1px #000;
 }
 
 .Ip {
     font-family: 'Roboto Condensed', sans-serif;
-    color: rgb(252, 255, 50);
+    color: #00bde0;
     letter-spacing: 1px;
-    font-size: calc(20px + 5 * ((100vw - 360px) / 1560));
+    font-size: calc(25px + 10 * ((100vw - 360px) / 1560));
     margin: 10px auto 12px auto;
+    text-shadow: 1px 1px #000;
+}
+
+.pocet {
+    color: #00bde0;
 }
 
 .mainBtn {
     font-family: 'Roboto Condensed', sans-serif;
     display: inline-block;
-    margin: 2px 15px;
+    margin: 2px 10px;
     padding: 6px 15px;
     font-size: calc(20px + (0) * ((100vw - 360px) / 1560));
     font-weight: bold;
@@ -124,11 +398,39 @@ a {
 	color: #FFFFA0;
 }
 
-.mainContent h1 {
-    font-family: "Ubuntu", sans-serif;
+.news h1 {
+    font-family: 'Roboto Condensed', sans-serif;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
 }
+
+.lfBuilders {
+   position: fixed;
+   bottom: 0px;
+   right: 15px;
+   width: 200px;
+   height: 180px;
+   text-align: center;
+   border-radius: 15px 15px 0 0;
+   background-image: url(images/builderB.png);
+   background-size: cover;
+   text-shadow: 1px 1px #000;
+   box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.3);
+   z-index: 10000;
+   animation: builderShow 3s forwards;
+}
+
+.lfBuilders h3 {
+    margin-top: 15px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+ .builderLink {
+     text-decoration: underline;
+     color: rgb(3, 219, 3);
+ }
+
 
 /**************NAV**************/
 
@@ -138,7 +440,7 @@ a {
     height: auto;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 2000;
 }
 
 .navBtn {
@@ -172,11 +474,11 @@ a {
 }
 
 .vipBtn {
-    background-color: rgba(21, 73, 71,0.6);
+    background-color: rgba(35, 156, 152, 0.6);
 }
 
 .vipBtn:hover {
-    background-color: rgba(34, 107, 105,0.6);
+    background-color: rgba(42, 214, 208, 0.6);
 }
 
 .menuBtn {
@@ -211,17 +513,20 @@ a {
 /**************FOOTER**************/
 
 footer {
+    display: table-row;
+    width: 100%;
+    height: auto;
+    background-color: rgb(15, 15, 15);
+}
+
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    height: auto;
-    background-color: rgb(20, 20, 20);
-    margin-top: 100px;
 }
 
 .footerBlock {
-    margin: 20px;
+    margin: 5px 20px 5px 20px;
     width: 200px;
     height: auto;
     padding: 10px;
@@ -230,7 +535,7 @@ footer {
 .footerBlock h2 {
     padding: 5px 0 5px 0;
     border-bottom: 2px solid white;
-    color: rgb(210, 212, 47);
+    color: #00bde0;
 }
 
 .footerBlock ul {
@@ -247,6 +552,10 @@ footer {
     font-weight: unset;
 }
 
+footer a:hover {
+   text-decoration: underline;
+}
+
 .cpNotice {
     margin-top: 0px;
     width: 100%;
@@ -255,24 +564,22 @@ footer {
 
 /**************VIP**************/
 .vip {
-    background-image: url(images/vipBackground2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(images/backg2.png);
 }
 
 .vipFlexWrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 55px;
 }
 
 .vipBlock {
     border-radius: 20px;
     position: relative;
     width: 290px;
-    height: 400px;
-    margin: 40px 30px 30px 30px;
+    height: 460px;
+    margin: 30px 30px 60px 30px;
     box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.3)
 }
 
@@ -309,7 +616,7 @@ footer {
 }
 
 .vipBtnDiaBuy { 
-    background-color:  rgb(7, 43, 61);
+    background-color:  rgb(6, 37, 53);
 }
 
 .vipBtnDiaBuy:hover {
@@ -317,7 +624,7 @@ footer {
 }
 
 .vipBtnGoldBuy:hover {
-    background-color:  rgb(39, 39, 1);
+    background-color:  rgb(34, 34, 0);
 }
 
 .vipBtnIronBuy:hover {
@@ -325,16 +632,18 @@ footer {
 }
 
 .vipBtnGoldBuy {
-    background-color:  rgb(47, 48, 1);  
+    background-color:  rgb(40, 41, 1);  
 }
 
 .vipBtnIronBuy { 
-    background-color:  rgb(41, 41, 41);  
+    background-color:  rgb(39, 39, 39);  
 }
 
 .vipBtnBuy {
-    display: block;
-    margin-top: auto;
+    font-size: 15px;
+    width: 100%;
+    color: white;
+    border: unset;
     border-radius: 0 0 18px 18px;
     padding: 10px;
     text-align: center;
@@ -342,24 +651,32 @@ footer {
     letter-spacing: 1px;
     text-shadow: 1px 1px #000;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .vip1 {
     background-color: rgb(114, 114, 114);
     background: linear-gradient(0deg, rgb(59, 59, 59) 7%, rgba(114,114,114,1) 49%, rgba(176,176,176,1) 100%);
-   
 }
+
+.vip1:hover .swordImg1 {animation: ease-in vipSwish 3s;}
+.vip1:hover .swordImg2 {animation: ease-in vipSwish2 3s;}
+
+.vip2:hover .swordImg1 {animation: ease-in vipSwish 3s;}
+.vip2:hover .axeImg2 {animation: ease-in vipSwish2 3s;}
+
+.vip3:hover .swordImg1 {animation: ease-in vipSwish 3s;}
+.vip3:hover .swordImg2 {animation: ease-in vipSwish2 3s;}
+
 
 .vip2 {
     background-color: #a58a1d;
     background: linear-gradient(0deg, rgb(64, 66, 3) 7%, rgba(165,138,29,1) 49%, rgb(180, 151, 32) 100%);
-
 }
 
 .vip3 {
     background-color: #2b9fa1;
     background: linear-gradient(0deg, rgb(8, 56, 80) 7%, rgba(43,159,161,1) 49%, rgb(32, 184, 187) 100%);
-   
 }
 
 .swordImg1 {
@@ -377,6 +694,7 @@ footer {
 }
 
 .vipDia {
+    z-index: 10;
     left: 0; 
     right: 0; 
     margin-left: auto; 
@@ -391,6 +709,7 @@ footer {
 
 
 .vipGold {
+    z-index: 10;
     left: 0; 
     right: 0; 
     margin-left: auto; 
@@ -409,4 +728,184 @@ footer {
     left: 170px;
     top: -30px;
     filter: drop-shadow(8px 13px 5px rgba(34,34,34,0.8));
+}
+
+.radios {
+    margin-bottom: 0px;
+    list-style-type: none;
+    background-color:  rgb(63, 63, 63);  
+    padding: 17px;
+    text-align: center;
+}
+
+.radios li {
+    display: inline-block;
+}
+
+.timeRadio {
+    display: none;
+}
+
+label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 6px 30px 6px 30px;
+    border-radius: 5px;
+}
+
+.ironRadio:checked + label {
+    background-color:  rgb(36, 36, 36);
+    border: 1px solid white;
+}
+
+.goldRadio:checked + label {
+    background-color:  rgb(39, 39, 1);
+    border: 1px solid white;
+}
+
+.diaRadio:checked + label {
+    background-color:  rgb(6, 37, 53);
+    border: 1px solid white;
+}
+
+.iron {
+    background-color:  rgb(56, 56, 56);
+}
+
+.ironRadio {
+    background-color:  rgb(36, 36, 36);
+    border: 1px solid rgb(43, 43, 43);
+}
+
+.goldRadio {
+    background-color:  rgb(39, 39, 1);
+    border: 1px solid rgb(39, 39, 1);
+}
+
+.diaRadio {
+    background-color:  rgb(6, 37, 53);
+    border: 1px solid rgb(6, 39, 56);
+}
+
+.gold {
+    background-color:  rgb(59, 59, 2);
+}
+
+.dia {
+    background-color:  rgb(7, 52, 75);
+}
+
+/**************************Admin Form**************************/
+
+.adminForm {
+   display: table;
+   margin: 10px auto;
+}
+
+.adminForm ul {
+    padding: 0px;
+}
+
+.adminForm li {
+    float: left;
+    list-style: none;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    width: 15px;
+    font-weight: unset;
+}
+
+.titleInput {
+    width: 800px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+.contentInput {
+    width: 800px;
+    height: 400px;
+}
+/**************************Social Sites**************************/
+
+/*social  #3B5998  #dd4b39  #495057  #1da1f2  #833ab4*/
+
+#social-sites {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    z-index: 1000;
+  }
+  
+  #social-sites a {
+    float: left;
+    text-align: center;
+    padding: 13px;
+    color: black;
+    font-size: 30px;
+    width: 30px;
+    transition: 0.5s;
+    clear: both;
+  }
+  
+  .fab {
+    color: white;
+  }
+  
+  #social-sites .facebook {
+    background-color: #3B5998;
+    border-top-right-radius: 15px;
+  } 
+  #social-sites .youtube {background-color: #e60000;}
+  #social-sites .discord {
+    background-color: #6f85d3;
+    border-bottom-right-radius: 15px;
+  }
+  #social-sites .facebook:hover {width: 58px;}
+  #social-sites .youtube:hover {width: 58px;}
+  #social-sites .discord:hover {width: 58px;}
+  
+.teamWrapper {
+    margin: 50px auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mate {
+    width: 220px;
+    height: 320px;
+    text-align: center;
+}
+
+.teamImg {
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
+    padding: 20px;
+}
+
+.owner {
+    color: #d40505;
+    font-family: "MinecraftP", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.dev {
+    color: #be00be;
+    font-family: "MinecraftP", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.name {
+    font-family: "MinecraftP", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
