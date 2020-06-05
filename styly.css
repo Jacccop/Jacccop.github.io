@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(240, 240, 240);
+    margin: 10px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    background-image: url(obrazky/pozadie.png);
+    background-repeat: repeat;
+}
+
+.obalovac {
+    width: 1024px;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgb(235, 223, 202);
+    border: 2px solid #2C2416;
+}
+
+nav {
+    padding: 5px;
+    text-align: center;
+    background-color: #453823;
+    height: auto;
+    overflow: hidden;
+    color: white;
+}
+
+nav a {
+    margin: 0px 15px;
+    padding: 10px 15px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #2c2416;
+    border-radius: 5px;
+}
+
+nav img {
+    width: 80px;
+    vertical-align: middle;
+}
+
+p {
+    padding: 0px 10px;
+}
+
+.obrazokClanku {
+    width: 200px;
+    float: right;
+    clear: both;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #2C2416;
+    color: white;
+}
+
