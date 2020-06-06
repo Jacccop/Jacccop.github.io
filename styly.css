@@ -17,7 +17,6 @@ body {
 }
 
 nav {
-    padding: 5px;
     text-align: center;
     height: auto;
     overflow: hidden;
@@ -30,11 +29,13 @@ nav {
 
 nav a {
     margin: 0px 15px;
-    padding: 10px 15px;
+    padding: 42px 15px;
     display: inline-block;
     cursor: pointer;
     vertical-align: middle;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -43,6 +44,7 @@ nav a:hover {
 }
 
 nav img {
+    margin: 0px 15px;
     width: 80px;
     vertical-align: middle;
 }
@@ -51,7 +53,7 @@ p {
     padding: 0px 10px;
 }
 
-h1 {
+h1, h2 {
     padding: 0px 10px;
 }
 
