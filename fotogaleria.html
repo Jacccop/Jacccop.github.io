@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Knihtlač.sk</title>
+        <title>Island</title>
         <link rel="stylesheet" href="styly.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         
         <script language="JavaScript">
 
@@ -42,40 +41,36 @@
     </head>
 
     <body>
-        <div class="obalovac">
-            <nav>
-                <a href="index.html">KDE TO ZAČALO</a><a href="vynalez.html">VYNÁLEZ</a><img src="obrazky/logo.png" alt="logo"><a href="fotogaleria.html">FOTOGALÉRIA</a><a href="kontakt.html">KONTAKT</a>
-            </nav>
+        <nav>
+            <h1>Island</h1><a href="index.html">Úvod</a><a href="mapa.html">Mapa</a><a href="fotogaleria.html">Fotogaléria</a><a href="kontakt.html">Kontakt</a>
+        </nav>
 
-            <center>
-            <img border="0" src="obrazky/obr1.jpg" alt="foto" name="foto">
-            <br>
-            <br> 
+        <center>
+        <img border="0" src="obrazky/obr1.jpg" alt="foto" name="foto">
+        <br>
+        <br> 
 
-            <table>
-            
+        <table>
             <tr>
                 <td onmouseover="document.images['prv'].src='obrazky/vlavo.png'" onmouseout="document.images['prv'].src='obrazky/vlavo.png'">
                 <a href="#" onClick="prev(); return false;">
                     <img name="prv" src="obrazky/vlavo.png" alt="">
                 </a>
                 </td>
-                    
+                        
                 <td onmouseover="document.images['end'].src='obrazky/spat.png'" onmouseout="document.images['end'].src='obrazky/spat.png'">
                 <a href="index.html">
                     <img name="end" src="obrazky/spat.png" alt="">
                 </a>
                 </td>
-                    
+                        
                 <td onmouseover="document.images['next'].src='obrazky/vpravo.png'" onmouseout="document.images['next'].src='obrazky/vpravo.png'">
                 <a href="#" onClick="nnext(); return false;">
                     <img name="next" src=obrazky/vpravo.png alt="">
                 </a>
                 </td>
             </tr>
-            </table>
-            </center>
-            <footer>Vytvorila Dominika Keblušková 3.C</footer>
-        </div>
+        </table>
+        </center>
     </body>
 </html> 
